@@ -1,6 +1,6 @@
-#	William "William" Knowles-Kellett
+#	William Knowles-Kellett
 #	08/18/17
-#	Input Function
+#	
 
 #	Define function
 
@@ -10,6 +10,7 @@ def toint(q):
 
 #	Define constants
 print "Enter function in python notation.\tx^2 => x**2\tsin(x) => sin(x)"
+#	f(x) program as a list of strings
 fString = ["from Math import *\ndef f(x):\n", "\ty = " + raw_input("f(x) = "), "\n\treturn y"]
 height = 40
 width = 40
@@ -29,6 +30,7 @@ for i in range(0,len(fString)):
 	newProgram.write(fString[i])
 newProgram.close()
 
+#	import the user-entered f(x) from the new file
 from function import f
 
 
@@ -49,7 +51,7 @@ for i in height:
 			graph[i].append(". ")
 
 
-#	Write over graph with function
+#	Write over graph given y=f(x)
 jay = 0
 x = first[0]
 while (jay + 0.5*unit < len(width)):
