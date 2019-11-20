@@ -1,0 +1,6 @@
+1.0/2*x + sin(x/2)
+-10,10)
+1
+0.1
+
+The second line makes more sense in the UI
