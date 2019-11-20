@@ -39,10 +39,10 @@ from function import f
 
 
 #	Establish graph with axis
-for i in height:
+for i in h_range:
 	y = first[1] - unit*i
 	graph.append([])
-	for j in width:
+	for j in w_range:
 		x = unit*j + first[0]
 		if (y==0):
 			if (x==0):
@@ -58,11 +58,11 @@ for i in height:
 #	Write over graph given y=f(x)
 jay = 0
 x = first[0]
-while (jay + 0.5*unit < len(width)):
+while (jay + 0.5*unit < width):
 	j = toint(jay)
 	y = f(x)
 	i = toint((first[1]-y)/unit)
-	if (i >= 0 and i < len(height)):
+	if (i >= 0 and i < height):
 		graph[i][j] = "O "
 	jay = jay + prec
 	x = jay*unit + first[0]
