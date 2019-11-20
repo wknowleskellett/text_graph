@@ -10,24 +10,28 @@ def toint(q):
 
 #	Define constants
 print "Enter function in python notation.\tx^2 => x**2\tsin(x) => sin(x)"
+
 #	f(x) program as a list of strings
-fString = ["from Math import *\ndef f(x):\n", "\ty = " + raw_input("f(x) = "), "\n\treturn y"]
+funcString = ["from math import *\ndef f(x):\n", "\ty = " + raw_input("f(x) = "), "\n\treturn y"]
+
 height = 40
 width = 40
-height = range(0, height)
-width = range(0, width)
+h_range = range(0, height)
+w_range = range(0, width)
 graph = []
-first = raw_input("First coordinate (x,y): ")	#Coordinates of top left corner of graph
-first = first[1:len(first)-1].split(",")
-first = [int(first[0]), int(first[1])]
-unit = float(raw_input("Unit: "))
-prec = float(raw_input("Precision (a fraction of unit): "))
 
+#       Process input
+first_co_str = raw_input("First coordinate (x,y): (")	#Coordinates of top left corner of graph
+first_co_li = first_co_str[:-1].split(",")
+first = [int(first_co_li[0].strip()), int(first_co_li[1].strip())]
+unit = float(raw_input("Scale (size of a unit): "))
+prec = float(raw_input("Precision (a decimal within unit - essentially epsilon): "))
 
 #	Write a file for f(x)
 newProgram = open("function.py", "w")
-for i in range(0,len(fString)):
-	newProgram.write(fString[i])
+
+for i in range(0,len(funcString)):
+	newProgram.write(funcString[i])
 newProgram.close()
 
 #	import the user-entered f(x) from the new file
